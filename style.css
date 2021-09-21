@@ -1,0 +1,13 @@
+html {
+    background-color: #fdf97d ;
+}
+h1 {
+    text-align: center ;
+    background-color: lightsalmon;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    display: inline ;
+    padding: 40px ;
+    
+}

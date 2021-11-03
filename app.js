@@ -1,6 +1,6 @@
 'use strict';
 
-let hours = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
+let hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
 function generateRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -45,14 +45,29 @@ function Store(name, minCustPerHour, maxCustPerHour, avgCookPerCust){
 
 function tableHeader(){
   let header = document.getElementById('thead')
+  let blankHead = document.createElement('th');
+  header.appendChild(blankHead);
   for (let i = 0; i < hours.length; i++){
-    let hour = document.createElement('th')
-    hour.textContent = hours[i] 
+    let hour = document.createElement('th');
+    hour.textContent = hours[i]; 
     header.appendChild(hour);
   }
+  let total = document.createElement('th')
+  total.textContent = ("Daily Totals")
+  header.appendChild(total)
 }
+////////////////////////////////////////////////////////////
+// function tableFooter(){
+//   let footer = document.getElementById('tfoot')
+//   for(let i = 0; i < this.salesTotals.length; i ++){
+//   let hourlyTotals = document.createElement('tf')
+//   hourlyTotals.textContent = this.salesTotals[i];
+//   footer.appendChild(hourlyTotals)
+//   }
+// }
 let seattle = new Store('Seattle', 23, 65, 6.3)
 tableHeader()
+// tableFooter()
 function generateRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
